@@ -1,0 +1,420 @@
+.ctaContainer {
+  width: 100%;
+
+  @include sm {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cta {
+  @include transition2;
+  @include ctaStyle;
+  padding: 0 32px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: $radius;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &.cta01 {
+    @include cta01;
+  }
+
+  &.cta01alt {
+    @include cta01alt;
+  }
+
+  &.cta02 {
+    @include cta02;
+  }
+
+  &.cta02alt {
+    @include cta02alt;
+  }
+}
+
+.hiperlink {
+  @include transition2;
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+}
+
+figure {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $darkBlack;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue;
+}
+
+.mainNav {
+  background-color: rgb(239 246 255);
+  color: black;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include wrapper;
+  }
+
+  &__logo {
+    font-size: 20px;
+  }
+
+  &__links {
+    display: flex;
+  }
+
+  &__link {
+    margin-right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.activeLink {
+    color: black !important;
+
+    svg {
+        path {
+            fill: black; 
+        }
+    }
+}
+
+.dashboard {
+  display: flex;
+  margin-top: 56px;
+
+  &__leftSide {
+    width: 20%;
+  }
+
+  &__rightSide {
+    width: 80%;
+  }
+}
+
+.sideBar {
+  width: 20%;
+  height: 100vh;
+  background-color: #00abb3;
+  position: fixed;
+  padding-top: 20px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+
+  &__wrapper {
+    padding: 0 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    margin: 16px 0;
+    transition: all 0.2s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+
+.panelTilte {
+  padding: 8px 24px;
+  background-color: #d9d9d9;
+  margin: 24px;
+
+  span {
+    color: #2d81c1;
+  }
+}
+
+.addProduct {
+  margin-left: 28px;
+  color: #2d81c1;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.table {
+  margin: 24px;
+  border: 1px solid black;
+
+  &__tableHeader {
+    background-color: #d9d9d9;
+    padding: 8px;
+    font-weight: bold;
+  }
+
+  &__tableTopBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 24px;
+
+    select {
+        border: 1px solid black;
+        margin: 0px 8px;
+        width: 72px;
+    }
+
+    input {
+        border: 1px solid black;
+        padding: 4px;
+        margin-left: 8px;
+    }
+  }
+}
+
+
+table {
+    width: 100%;
+    padding-top: 30px;
+    border-collapse: collapse;
+    border: 0.5px solid #d3dae0;
+  }
+  
+  table thead {
+    background-color: #ebeef1;
+    border-bottom: 0.5px solid #d3dae0;
+  }
+  
+  table thead td {
+    padding: 10px;
+    font-weight: bold;
+    color: #767779;
+    font-size: 14px;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table thead {
+      display: none;
+    }
+  }
+  
+  table tbody tr {
+    border-bottom: 0.5px solid #d3dae0;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table tbody tr:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #fbfcfc;
+  }
+  
+  table tbody tr:hover {
+    background-color: #376ab7;
+  }
+  
+  table tbody tr:hover td {
+    color: white;
+  }
+  
+  table tbody tr:hover td:nth-child(1) {
+    color: white;
+  }
+  
+  table tbody tr:hover td:before {
+    color: white;
+  }
+  
+  table tbody td {
+    padding: 10px;
+  }
+  
+  table tbody td input {
+    border: solid 1px gray;
+    color: gray; 
+    padding: 8px;
+  }
+  table tbody tr:hover input {
+    border: solid 1px white;
+    color: white;
+  }
+  table tbody tr input::placeholder {
+    color: gray; 
+  }
+  table tbody tr:hover input::placeholder {
+    color: white;
+  }
+  
+  table tbody td span {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    visibility: visible;
+    max-width: 240px;
+  }
+  
+  .historyContact table tbody td span {
+    -webkit-line-clamp: 20;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table tbody td span {
+      max-width: 100%;
+      margin: 0 auto;
+      margin-right: 0px;
+    }
+  }
+  
+  table tbody td:nth-child(1) {
+    color: #a5a7a9;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table tbody td:nth-child(1) {
+      background-color: #376ab7;
+      color: #ecf0f6;
+    }
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table tbody td {
+      border-bottom: 0.5px solid #d3dae0;
+      min-height: 42px;
+    }
+    table tbody td:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  table tbody td.actions {
+    padding: 8px;
+    text-align: right;
+  }
+  
+  table tbody td.actions .edit,
+  table tbody td.actions .trash {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    text-align: right;
+    color: white;
+    padding: 10px 12px;
+    cursor: pointer;
+  }
+  
+  table tbody td.actions .edit {
+    background-color: #37afb7;
+  }
+  
+  table tbody td.actions .edit:hover {
+    background-color: #319ca3;
+  }
+  
+  table tbody td.actions .trash {
+    background-color: #b73737;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  table tbody td.actions .trash:hover {
+    background-color: #a33131;
+  }
+  
+  @media screen and (max-width: 1023px) {
+    table tbody tr, table tbody td {
+      display: block;
+      width: 100%;
+    }
+    table tbody td {
+      text-align: right;
+      position: relative;
+      padding-left: 100px;
+    }
+    table tbody td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      text-align: left;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+      padding-left: 10px;
+      font-weight: bold;
+      color: #767779;
+      font-size: 14px;
+    }
+    table tbody td:nth-child(1):before {
+      color: #ecf0f6;
+    }
+  }
+  .create-contact {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    background-color: #38b673;
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    padding: 10px 15px;
+    margin: 15px 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }

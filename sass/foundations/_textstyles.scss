@@ -1,0 +1,165 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+//Fonts
+$font: 'Latin',
+sans-serif;
+$font2:'Latin',
+monospace;
+
+$textMaxWidth: 720px;
+
+.center {
+    text-align: center;
+}
+
+
+@mixin font-giant {
+    @include textMargins;
+    max-width: $textMaxWidth;
+    font-size: 80px;
+    font-weight: 300;
+    line-height: 88px;
+
+    @include sm {
+        font-size: 52px;
+        line-height: 60px;
+    }
+}
+
+@mixin font-xxl {
+    @include textMargins;
+    max-width: $textMaxWidth;
+    font-size: 60px;
+    font-weight: 200;
+    line-height: 68px;
+
+    @include sm {
+        font-size: 48px;
+        line-height: 56px;
+    }
+}
+
+@mixin font-xl {
+    @include textMargins;
+    max-width: $textMaxWidth;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 58px;
+
+    @include sm {
+        font-size: 30px;
+        line-height: 46px;
+    }
+}
+
+@mixin font-l {
+    @include textMargins;
+    max-width: $textMaxWidth;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 44px;
+
+    @include sm {
+        font-size: 22px;
+        line-height: 36px;
+    }
+}
+
+@mixin font-m {
+    @include textMarginsSmall;
+    max-width: $textMaxWidth;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 32px;
+
+    @include sm {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@mixin font-s {
+    @include textMarginsSmall;
+    max-width: $textMaxWidth;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+@mixin font-xs {
+    @include textMarginsSmall;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+// Default Styles
+
+@mixin textMargins {
+    margin-top: 32px;
+
+    @include sm {
+        margin-top: 24px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+@mixin textMarginsSmall {
+    margin-top: 24px;
+
+    @include sm {
+        margin-top: 16px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+@mixin ctaStyle {
+    margin-top: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+// Default Text Styles for Modules
+
+@mixin moduleDefault {
+    &__heading {
+        text-align: center;
+        margin-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include sm {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title {
+        @include font-xl;
+
+        //color: $m-01;
+
+        .white {
+            color: white;
+        }
+    }
+
+    &__subtitle {
+        @include font-m;
+    }
+
+    &__description {
+        @include font-s;
+    }
+}
